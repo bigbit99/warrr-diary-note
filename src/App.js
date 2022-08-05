@@ -7,11 +7,13 @@ import DiaryDetail from "./pages/DiaryDetail";
 import DiaryComment from "./pages/DiaryComment";
 import NotFound from "./pages/NotFound";
 import Links from "./components/Links";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Header />
         <Links />
         <Routes>
           <Route path="/" element={<Home />} />

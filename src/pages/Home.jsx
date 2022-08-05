@@ -1,3 +1,17 @@
+import { Link } from "react-router-dom";
+
+
 export default function Home() {
-    return <div>Home 페이지 입니다. </div>
+    return (
+    <div>
+        <div>  
+            <Link to="/diarywrite">일기 쓰러 가기</Link>
+            < br/>
+            <Link to="/diarywriteAll">DiaryWriteAll</Link>
+        </div>
+        <hr/>
+        <footer>
+            2조 짱
+        </footer>
+    </div>)
 }
