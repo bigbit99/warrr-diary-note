@@ -7,12 +7,6 @@ function Links(){
             <Link to="/">Home</Link>
         </li>
         <li>
-            <Link to="/diarywrite">DiaryWrite</Link>
-        </li>
-        <li>
-            <Link to="/diarywriteAll">DiaryWriteAll</Link>
-        </li>
-        <li>
             <Link to="/diarydetail">DiaryDetail</Link>
         </li> 
         <li>
