@@ -1,5 +1,19 @@
 function Diary_write() {
-    return <div>일기 작성 페이지입니다.</div>
+    return (
+    <div>
+        <div>작성자
+            <input type="text" />
+        </div>
+        <div>제목
+            <input type="text" />
+        </div>
+        <div>
+            내용
+            <input type="text" />
+        </div>
+            
+    </div>
+    )
 }
 
 
