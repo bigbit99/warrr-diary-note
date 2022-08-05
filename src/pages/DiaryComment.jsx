@@ -20,7 +20,7 @@ function Diary_writeAll() {
                 <span>내용을 넣어주세요</span>
                 <button>수정</button>
                 <button>삭제</button>
-            </div>6
+            </div>
         </div>
     );
 };
