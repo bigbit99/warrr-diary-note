@@ -10,10 +10,13 @@ function Links(){
             <Link to="/diarywrite">DiaryWrite</Link>
         </li>
         <li>
-            <Link to="/diarydetail">Profile/1</Link>
+            <Link to="/diarywriteAll">DiaryWriteAll</Link>
+        </li>
+        <li>
+            <Link to="/diarydetail">DiaryDetail</Link>
         </li> 
         <li>
-            <Link to="/diarycomment">About</Link>
+            <Link to="/diarycomment">DiaryComment</Link>
         </li>
        
     </ul>
