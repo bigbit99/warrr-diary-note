@@ -1,18 +1,21 @@
+//develop
 import { Link } from "react-router-dom";
-
+import './Home.css'
 
 export default function Home() {
     return (
-    <div>
-        <hr/>
-        <div>  
-            <Link to="/diarywrite">일기 쓰러 가기</Link>
-            < br/>
-            <Link to="/diarywriteAll">DiaryWriteAll</Link>
+    <div className="home">
+        <div className="homebox">
+            <hr/>
+            <div>  
+                <Link to="/diarywrite" className="link">일기 쓰러 가기</Link>
+                < br/>
+                <Link to="/diarywriteAll" className="link">DiaryWriteAll</Link>
+            </div>
+            <hr/>
+            
         </div>
-        <hr/>
-        <footer>
-            2조 짱
-        </footer>
-    </div>)
+            <footer></footer>
+    </div>
+    )
 }
