@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import Button from "../components/Button";
+import Button from "../components/Button";
 
 function Diary_writeAll() {
     const userList = useSelector((state)=> state.userReducer); 
@@ -19,7 +19,7 @@ function Diary_writeAll() {
                     </div>
                 );
             })}
-              <button onClick={()=>navigate('../diarydetail')}>자세히보기</button>
+              <Button label='자세히보기' onClick={()=>navigate('../diarydetail')}/>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addUser } from '../redux/Users';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../components/Button.styled';
+import Button from "../components/Button";
 // import { useForm } from 'react-hook-form';
 
 function Diary_write() {
