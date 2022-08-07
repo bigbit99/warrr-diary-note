@@ -6,7 +6,7 @@ const initialState = [
     id: 0,
     name: "이름",
     title: "제목",
-    contents: "내용",
+    contents: "수정할거야",
     comment: "댓글",
   },
 ];
@@ -29,6 +29,24 @@ export const userSlice = createSlice({
       });
       return newDelCmt;
     },
+
+    editDiary: (state, action) => {
+      state = state.map((data) => {
+        if(data.id === action.payload.id) {
+          data.contents = action.payload.new;
+        }
+      });
+      // state = state.map((data) => {
+      //   if(data.id === action.payload.id) {
+      //     data.contents = action.payload.new;
+      //   }
+      // });
+      // state.map((item) => item.contents = action.payload)
+    },
+
+    // editDiary: (state, action) => {
+    //   return [{...state, cotents: action.payload}]
+    // },
   },
 });
 
@@ -40,6 +58,6 @@ export const userSlice = createSlice({
 //   });
 // },
 
-export const { addUser, addComment, delComment, changeComment } =
+export const { addUser, addComment, delComment, changeComment, editDiary} =
   userSlice.actions;
 export default userSlice.reducer;

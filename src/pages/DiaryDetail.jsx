@@ -1,13 +1,20 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
+import { editDiary } from "../redux/Users";
 import { Link } from 'react-router-dom';
 
 function Diary_writeAll() {
     const dispatch = useDispatch();
-
     const userList = useSelector((state)=> state.userReducer); 
     console.log(userList)
+
     const [edited, setEdited] = useState(false);
+    const [newDiary, setNewDiary] = useState("");
+    //console.log(userList)
+
+    useEffect(() => {
+        setNewDiary(userList.contents);
+    }, [userList]);
 
     const onClickEditButton = () => {
         setEdited(true);
@@ -31,24 +38,20 @@ function Diary_writeAll() {
                                 {edited ? (
                                         <>
                                             <input
-                                                // name="body"
-                                                // rows="10"
-                                                // maxLength={200}
-                                                // value={updatedTodo}
-                                                // onChange={(event) => {
-                                                // setUpdatedTodo(event.target.value);
-                                                // }}
+                                                name="contents"
+                                                value={newDiary}
+                                                onChange={(e)=>{setNewDiary(e.target.value)}}
                                             />
                                         </>
                                     ) : (
-                                        <p size="18">{user?.contents}</p>
+                                        <p>{user?.contents}</p>
                                     )
                                 }
 
                                 {edited ? (
                                     <button 
                                     type='button'
-                                    onClick={onClickSubmitButton}
+                                    onClick={() => onClickSubmitButton(dispatch(editDiary({new: newDiary, id: user.id, contents: user.contents})))}
                                     >저장</button>
                                 ) : (
                                     <button 
