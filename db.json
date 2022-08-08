@@ -1,9 +1,19 @@
 {
-  "todos": [
+  "posts": [
     {
       "id": 1,
       "title": "json-server",
-      "content": "json-server를 배워봅시다."
+      "author": "typicode"
     }
-  ]
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
