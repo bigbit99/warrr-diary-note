@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 
 function Diary_writeAll() {
+    
     const userList = useSelector((state)=> state.userReducer); 
     console.log(userList)
     const navigate = useNavigate();
-
+    
     return (
         <div >
             
