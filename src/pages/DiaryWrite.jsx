@@ -9,6 +9,7 @@ function Diary_write() {
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
   const [contents, setContents] = useState('');
+
   //form 유효성
 //   const {
 //     register,
@@ -35,17 +36,23 @@ function Diary_write() {
   };
   console.log(userList);
 
+
   return (
     <form onSubmit={(event) => addData(event)} className="box">
       <div className="boxname">
         작성자
         <input
+     
+          name='name'
           type="text"
           placeholder="작성자의 이름을 입력해주세요.(5자 이내)"
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-          value={name}
+          
+          // onChange={(event) => {
+          //   setName(event.target.value)
+          //   alert('Click!')
+          // }}
+          // value={name}
+          
         //   {...register('name', {
         //     required: '필수 항목입니다.',
         //     minLength: {
@@ -60,6 +67,7 @@ function Diary_write() {
         제목
         <input
           type="text"
+          minlength='10' 
           placeholder="제목을 입력해주세요.(10자 이상)"
           onChange={(event) => {
             setTitle(event.target.value);
@@ -74,6 +82,7 @@ function Diary_write() {
         //   })}
         />
         {/* <p>{errors.title?.message}</p> */}
+        
       </div>
       <div className="boxcomment">
         내용
@@ -94,11 +103,14 @@ function Diary_write() {
         />
         {/* <p>{errors.comment?.message}</p> */}
       </div>
-      <button type="submit">Add</button>
+      <button type="submit" onClick={(num) => this.doAction("run") }>Add</button>
 
       <Button type="button" onClick={() => navigate('../diarywriteAll')}>
-        일기 보러가기
+        일기 보러가기  
       </Button>
+      {/* num(){
+      alert("ok")
+    } */}
     </form>
   );
 }
