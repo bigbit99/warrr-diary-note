@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
 import { fetchUser } from "../redux/modules/Diary_notes";
+
+import Button from "../components/Button";
+
 
 function Diary_writeAll() {
     const dispacth = useDispatch();
@@ -28,9 +32,12 @@ function Diary_writeAll() {
                         <p>{users.title}</p>
                         <p>{users.contents}</p>
                     </div>
+
                 ))
             }
-              <button onClick={()=>navigate('../diarydetail')}>자세히보기</button>
+     
+              <Button label='자세히보기' onClick={()=>navigate('../diarydetail')}/>
+
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
+import Button from "../components/Button";
 
 function Diary_writeAll() {
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function Diary_writeAll() {
                                 {/* (<button 
                                     type="button"
                                     onClick={()=>{onClickEditBtn}}>수정</button>) */}
-                                <button>저장</button>
+                                <Button label='저장'/>
                             </div>
                         </>
                     )

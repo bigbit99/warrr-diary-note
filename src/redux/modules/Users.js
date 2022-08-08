@@ -29,6 +29,14 @@ export const userSlice = createSlice({
       });
       return newDelCmt;
     },
+
+    changeComment: (state, action) => {
+      state = state.map((data) => {
+        if (data.id === action.payload.id) {
+          data.content = action.payload.new;
+        }
+      });
+    },
   },
 });
 
