@@ -1,6 +1,6 @@
 import React, { useState }  from "react";
 import {useSelector, useDispatch} from "react-redux";
-import { addComment, delComment, changeComment } from "../redux/Users";
+import { addComment, delComment, changeComment } from "../redux/modules/Users";
 import styled from "styled-components";
 
 

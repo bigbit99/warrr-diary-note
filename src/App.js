@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Home from "./pages/Home";
 import DiaryWrite from "./pages/DiaryWrite";
 import DiaryWriteAll from "./pages/DiaryWriteAll";
@@ -9,7 +8,7 @@ import NotFound from "./pages/NotFound";
 import Links from "./components/Links";
 import Header from "./components/Header";
 
-function App() {
+const App = () => {
   return (
     <>
       <BrowserRouter>
@@ -26,6 +25,6 @@ function App() {
       </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;
