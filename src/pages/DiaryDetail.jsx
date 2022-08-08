@@ -7,7 +7,7 @@ function Diary_writeAll() {
     const dispatch = useDispatch();
 
     const userList = useSelector((state)=> state.userReducer); 
-    console.log(userList)
+    // console.log(userList)
     const [edited, setEdited] = useState(false);
 
     return (
