@@ -1,31 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { editDiary, getDiary } from "../redux/Users";
+import { getDiary } from "../redux/Users";
 import { Link, useParams } from 'react-router-dom';
 import styled from "styled-components";
 import { Button } from '../components/Button.styled';
+import { patchfetchUser } from "../redux/modules/Diary_notes";
 
 function Diary_writeAll() {
     let {id} = useParams();
     const dispatch = useDispatch();
+    //console.log(id)
     
-    const userList = useSelector((state)=> state.userReducer); 
-    let data = userList.find((user) => user.id.toString() === id);
-    // let data = userList.find((user) => {console.log(user.id === id)
-    //     console.log(typeof id) string
-    //     console.log(typeof user.id) 
-    // });
-    // console.log(user)
-    console.log(id)
-    //console.log(userList)
+    // const userList = useSelector((state) => state.userReducer);
+    const users = useSelector((state)=>state.Diary_note.users) //수정할 곳
+    let data = users.find((users) => users.id.toString() === id);  
+    // console.log(data);
+    // console.log(users);
+    //console.log(data);
+    //console.log(data.contents)
 
     const [edited, setEdited] = useState(false);
     const [newDiary, setNewDiary] = useState("");
-    //console.log(userList)
 
-    useEffect(() => {
-        dispatch(getDiary(id));
-    }, [dispatch, id]);
+    // useEffect(() => {
+    //     patchfetchUser();
+    //   }, []);
+
+    // useEffect(() => {
+    //     dispatch(getDiary(id));
+    // }, [dispatch, id]);
 
     useEffect(() => {
         setNewDiary(data.contents);
@@ -36,13 +39,20 @@ function Diary_writeAll() {
       };
 
     const onClickSubmitButton = () => {
-        if(newDiary.trim() === '') {
-            alert("내용을 입력해주세요!");
+        console.log("submit");
+        if (newDiary.trim() === "") {
+          return alert("입력된 내용이 없습니다.");
         }
+        dispatch(
+            patchfetchUser({
+                ...users,
+                id: id,
+                contents: newDiary,
+            })
+        )
         setEdited(false);
-    };
+      };
 
-    console.log(data);
     return (
         <DetailBox>
             <h2>다이어리 상세페이지</h2>
@@ -64,7 +74,8 @@ function Diary_writeAll() {
             {edited ? (
                         <Button 
                         type='button'
-                        onClick={() => onClickSubmitButton(dispatch(editDiary({new: newDiary, id: data.id, contents: data.contents})))}
+                        onClick={() => onClickSubmitButton()}
+                        
                         >저장</Button>
                     ) : (
                         <Button 

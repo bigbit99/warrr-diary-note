@@ -23,6 +23,24 @@ export const addfetchUser = createAsyncThunk(
     return thunkAPI.fulfillWithValue(resdata);
   }
 );
+export const patchfetchUser = createAsyncThunk(
+  "users/fetchUser",
+  async (payload, thunkAPI) => {
+    console.log(payload);
+    const resdata = await axios
+      // eslint-disable-next-line no-template-curly-in-string
+      .patch(`http://localhost:3001/notes/${payload.id}`, {
+        id: payload.id,
+        contents: payload.contents,
+      })
+      .then((res) => 
+        {console.log(res.data)}
+      )
+      .catch((error) => error);
+      //  console.log(payload);
+    return thunkAPI.fulfillWithValue(resdata);
+  }
+);
 
 const Diary_note = createSlice({
   name: "users",

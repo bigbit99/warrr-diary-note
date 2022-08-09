@@ -4,17 +4,11 @@ import { createSlice, current } from "@reduxjs/toolkit";
 const initialState = [
   {
     id: 0,
-<<<<<<< HEAD:src/redux/Users.js
-    name: "이름",
-    title: "제목",
-    contents: "수정할거야",
-    comment: "댓글",
-=======
     name: "",
     title: "",
     contents: "",
     comment: "",
->>>>>>> 6f3897f716ca12d6f40e66bc86f679ae159f292d:src/redux/modules/Users.js
+
   },
 ];
 
@@ -36,11 +30,13 @@ export const userSlice = createSlice({
       });
       return newDelCmt;
     },
-
-<<<<<<< HEAD:src/redux/Users.js
+    
     editDiary: (state, action) => {
+      console.log(state, action.payload)
       state = state.map((data) => {
-        if(data.id === action.payload.id) {
+        console.log(data.id.toString() === action.payload.id)
+        console.log(data)
+        if(data.id.toString() === action.payload.id) {
           data.contents = action.payload.new;
         }
         return data;
@@ -51,16 +47,17 @@ export const userSlice = createSlice({
     getDiary: (state, action) => {
       state = state.map((data) => {
         if(data.id === action.payload) {
-          state.id = action.payload;
+          data.contents = action.payload;
         }
         return data;
-=======
+      });
+    },
+
     changeComment: (state, action) => {
       state = state.map((data) => {
         if (data.id === action.payload.id) {
           data.content = action.payload.new;
         }
->>>>>>> 6f3897f716ca12d6f40e66bc86f679ae159f292d:src/redux/modules/Users.js
       });
     },
   },

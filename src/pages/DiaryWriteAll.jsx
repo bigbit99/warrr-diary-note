@@ -1,28 +1,40 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { delComment } from "../redux/Users";
-// import Button from "../components/Button";
+
+import { fetchUser } from "../redux/modules/Diary_notes";
+
+import Button from "../components/Button";
+
 
 function Diary_writeAll() {
-    const userList = useSelector((state)=> state.userReducer); 
-    console.log(userList)
-    const navigate = useNavigate();
     const dispatch = useDispatch();
+    const users = useSelector((state)=>state.Diary_note.users) 
+   //console.log(users)
+    const navigate = useNavigate();
+    useEffect(()=>{
+        dispatch(fetchUser());
+    },[])
+
+    // if(error){
+    //     return <p>에러입니다</p>
+    // }        
+    // if(loading){
+    //     return <p>로딩중...</p>
+    // } 
     
     return (
         <div >
-            {userList.map((user) => {
-                return (
-                    <div key={user.id}>
-                        <h1>{user.name}</h1>
-                        <h1>{user.title}</h1>
-                        <h1>{user.contents}</h1>
-                        <button onClick={()=>navigate(`/diarydetail/${user.id}`)}>자세히보기</button>
-                        <button onClick={() => dispatch(delComment(user.id))}>삭제</button>
+            {users?.length > 0 && 
+                users.map((users) => (
+                    <div key={users.id}>
+                        <p>{users.name}</p>
+                        <p>{users.title}</p>
+                        <p>{users.contents}</p>
+                        <Button label='자세히보기' onClick={()=>navigate(`/diarydetail/${users.id}`)}/>
                     </div>
-                );
-            })}
-              
+                ))
+            }
         </div>
     )
 }
