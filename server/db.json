@@ -6,12 +6,6 @@
       "title": "제목",
       "contents": "내용",
       "comment": "댓글"
-    },
-    {
-      "id": 1,
-      "name": "김은혜",
-      "title": "오늘의 할일~~~~~",
-      "contents": "코딩을 했다"
     }
   ]
 }
