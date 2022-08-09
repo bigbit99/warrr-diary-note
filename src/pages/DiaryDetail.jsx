@@ -26,9 +26,9 @@ function Diary_writeAll() {
     //     patchfetchUser();
     //   }, []);
 
-    // useEffect(() => {
-    //     dispatch(getDiary(id));
-    // }, [dispatch, id]);
+    useEffect(() => {
+        dispatch(getDiary(id));
+    }, [dispatch, id]);
 
     useEffect(() => {
         setNewDiary(data.contents);
