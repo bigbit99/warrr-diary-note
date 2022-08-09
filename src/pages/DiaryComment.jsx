@@ -1,15 +1,11 @@
 import {useSelector, useDispatch} from "react-redux";
-
 import { addComment, delComment, changeComment } from "../redux/modules/Users";
-import styled from "styled-components";
-
 import Button from "../components/Button";
 import useInput from "../components/useInput";
 
 
 
 function Diary_writeAll() {
-
     const dispatch = useDispatch();
     const comments = useSelector((state)=> state.userReducer)
     const RandomNum = Math.floor(Math.random() * 100);
@@ -37,7 +33,7 @@ function Diary_writeAll() {
 
                     <Button label= '삭제하기' onClick={() => dispatch(delComment(comment.id))}/>
                     <Button label='수정하기'/></div><br />
-                    <div className="changeDiv"><input type='text' {...customNewText} /><Button label = '수정완료' onClick={() => dispatch(changeComment({new: customNewText.value, id : comment.id}))}/></div>
+                    <div className="changeDiv"><input type='text' name={comment.id} {...customNewText} /><Button label = '수정완료' onClick={() => dispatch(changeComment({new: customNewText.value, id : comment.id}))}/></div>
                 </>
             )})}
         </div>
