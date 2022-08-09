@@ -1,7 +1,11 @@
 import {useSelector, useDispatch} from "react-redux";
-import { addComment, delComment, changeComment } from "../redux/Users";
+
+import { addComment, delComment, changeComment } from "../redux/modules/Users";
+import styled from "styled-components";
+
 import Button from "../components/Button";
 import useInput from "../components/useInput";
+
 
 
 function Diary_writeAll() {

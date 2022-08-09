@@ -4,10 +4,10 @@ import { createSlice, current } from "@reduxjs/toolkit";
 const initialState = [
   {
     id: 0,
-    name: "이름",
-    title: "제목",
-    contents: "내용",
-    comment: "댓글",
+    name: "",
+    title: "",
+    contents: "",
+    comment: "",
   },
 ];
 
