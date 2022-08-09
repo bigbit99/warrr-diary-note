@@ -35,18 +35,19 @@ export const userSlice = createSlice({
         if(data.id === action.payload.id) {
           data.contents = action.payload.new;
         }
+        return data;
+        //function안에 return값 써주기
       });
-      // state = state.map((data) => {
-      //   if(data.id === action.payload.id) {
-      //     data.contents = action.payload.new;
-      //   }
-      // });
-      // state.map((item) => item.contents = action.payload)
     },
 
-    // editDiary: (state, action) => {
-    //   return [{...state, cotents: action.payload}]
-    // },
+    getDiary: (state, action) => {
+      state = state.map((data) => {
+        if(data.id === action.payload) {
+          state.id = action.payload;
+        }
+        return data;
+      });
+    },
   },
 });
 
@@ -58,6 +59,6 @@ export const userSlice = createSlice({
 //   });
 // },
 
-export const { addUser, addComment, delComment, changeComment, editDiary} =
+export const { addUser, addComment, delComment, changeComment, editDiary, getDiary} =
   userSlice.actions;
 export default userSlice.reducer;

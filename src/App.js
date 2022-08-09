@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/diarywrite" element={<DiaryWrite />} />
           <Route path="/diarywriteall" element={<DiaryWriteAll />} />
-          <Route path="/diarydetail" element={<DiaryDetail />} />
+          <Route path="/diarydetail/:id" element={<DiaryDetail />} />
           <Route path="/diarycomment" element={<DiaryComment />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
