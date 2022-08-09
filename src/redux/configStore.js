@@ -1,7 +1,17 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import userReducer from "./Users";
+import {
+  configureStore,
+  combineReducers,
+  applyMiddleware,
+} from "@reduxjs/toolkit";
+import userReducer from "./modules/Users";
+import { composeWithDevTools } from "redux-devtools-extension";
+import Diary_note from "./modules/Diary_notes";
 
-const rootReducer = combineReducers({ userReducer });
-const store = configureStore({ reducer: rootReducer });
+//combineReducers reduser 추가
+const rootReducer = combineReducers({ userReducer, Diary_note });
+const store = configureStore(
+  { reducer: rootReducer },
+  composeWithDevTools(applyMiddleware())
+);
 
 export default store;
