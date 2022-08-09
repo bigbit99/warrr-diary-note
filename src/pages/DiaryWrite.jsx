@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addUser } from '../redux/modules/Users';
+// import { addUser } from '../redux/modules/Users';
 import { useNavigate } from 'react-router-dom';
 import {addfetchUser} from '../redux/modules/Diary_notes'
 import {Button} from "../components/Button.styled";
