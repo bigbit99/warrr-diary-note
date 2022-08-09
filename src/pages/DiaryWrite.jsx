@@ -3,9 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // import { addUser } from '../redux/modules/Users';
 import { useNavigate } from 'react-router-dom';
 import {addfetchUser} from '../redux/modules/Diary_notes'
-import {Button} from "../components/Button.styled";
-
-// import { useForm } from 'react-hook-form';
+import {v4 as uuidv4} from "uuid";
 
 
 function Diary_write() {
@@ -38,13 +36,12 @@ function Diary_write() {
 
   return (
     <form onSubmit={(event) => {event.preventDefault();
-      dispatch(addfetchUser({id: userList[userList.length - 1].id + 1, name,title,contents}));
+      dispatch(addfetchUser({id: uuidv4(), name,title,contents}));
       }}className="box">
       <div className="boxname">
         작성자
         
           <input
-            type={"text"}
             placeholder="name"
             onChange={(event) => {
             const { value } = event.target;
@@ -57,7 +54,6 @@ function Diary_write() {
       <div className="boxtitle">
         제목
         <input
-          type="text"
           minlength='10' 
           placeholder="제목을 입력해주세요.(10자 이상)"
           onChange={(event) => {
@@ -72,7 +68,6 @@ function Diary_write() {
       <div className="boxcomment">
         내용
         <input
-          type="text"
           placeholder="내용을 입력해주세요.(10자 이상)"
           onChange={(event) => {
             const { value } = event.target;
@@ -82,7 +77,7 @@ function Diary_write() {
         />
   
       </div>
-      <button type="submit" onClick={(num) => this.doAction("run") }>Add</button>
+      <button type="submit" >Add</button>
 
       <Button type="button" onClick={() => navigate('../diarywriteAll')}>
         일기 보러가기  
