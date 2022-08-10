@@ -20,15 +20,15 @@ function Diary_writeAll() {
   let { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(id);
+//   console.log(id);
 
   const users = useSelector(state => state.Diary_note.users); 
   let data = users.find(data => data.id.toString() === id);
 
-  console.log(users);
-  console.log(data.id);
-  console.log(data.contents);
-  console.log(data.name);
+//   console.log(users);
+//   console.log(data.id);
+//   console.log(data.contents);
+//   console.log(data.name);
 
   const [edited, setEdited] = useState(false);
   const [newDiary, setNewDiary] = useState("");
@@ -58,6 +58,7 @@ function Diary_writeAll() {
     navigate('/diarywriteall');
   };
 
+
   return (
     <DetailBox>
       <h2>다이어리 상세페이지</h2>
@@ -68,7 +69,6 @@ function Diary_writeAll() {
         {/* <p>{id}</p> */}
         <p>{data?.name}</p>
         <p>{data?.title}</p>
-
         {edited ? (
           <input
             type="text"
