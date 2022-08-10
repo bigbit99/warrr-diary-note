@@ -2,9 +2,13 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import { addUser } from '../redux/modules/Users';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { Button } from '../components/Button.styled';
 import {addfetchUser} from '../redux/modules/Diary_notes'
 import {v4 as uuidv4} from "uuid";
+=======
+import Button from "../components/Button";
+>>>>>>> develop
 
 
 function Diary_write() {
@@ -36,17 +40,14 @@ function Diary_write() {
       }}className="box">
       <div className="boxname">
         작성자
-        
           <input
-            placeholder="name"
+            placeholder="작성자의 이름을 입력해주세요.(5자 이내)"
             required
             onChange={(event) => {
             const { value } = event.target;
             setName({ ...name, userName:value });
             }}
             />
-           
-
       </div>
       <div className="boxtitle">
         제목
@@ -58,8 +59,7 @@ function Diary_write() {
           onChange={(event) => {
             const { value } = event.target;
             setTitle({ ...title, userTitle:value });
-          }}
-
+          }}      
         />
    
         
