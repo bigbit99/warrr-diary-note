@@ -18,21 +18,14 @@ function Diary_write() {
     userContents : ''
   });
 
+ 
   const dispatch = useDispatch();
   const userList = useSelector((state) => state.userReducer);
   const navigate = useNavigate();
-  // const addData = (event) => {
-  //   event.preventDefault();
-  //   const newUser = {
-  //     id: userList[userList.length - 1].id + 1,
-  //     name: name,
-  //     title: title,
-  //     contents: contents,
-  //   };
-  //   console.log(newUser);
-  //   dispatch(addUser(newUser));
-  // };
- 
+  
+  if (title< 10){
+    alert('10글자 이상 입력 ')
+  }
 
 
   return (
@@ -44,6 +37,7 @@ function Diary_write() {
         
           <input
             placeholder="name"
+            required
             onChange={(event) => {
             const { value } = event.target;
             setName({ ...name, userName:value });
@@ -55,8 +49,11 @@ function Diary_write() {
       <div className="boxtitle">
         제목
         <input
-          // minlength='10' 
+          minlength={10}
           placeholder="제목을 입력해주세요.(10자 이상)"
+          required
+          // value={title}
+         
           onChange={(event) => {
             const { value } = event.target;
             setTitle({ ...title, userTitle:value });
@@ -70,6 +67,7 @@ function Diary_write() {
         내용
         <input
           placeholder="내용을 입력해주세요.(10자 이상)"
+          required
           onChange={(event) => {
             const { value } = event.target;
             setContents({ ...contents, userContents:value });
