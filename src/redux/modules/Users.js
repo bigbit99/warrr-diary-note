@@ -5,9 +5,9 @@ const initialState = [
   {
     id: 0,
     name: "",
-    title: "",
+    title: "2조는",
     contents: "",
-    comment: "",
+    comment: "못말려",
 
   },
 ];
@@ -22,6 +22,7 @@ export const userSlice = createSlice({
 
     addComment: (state, action) => {
       state = state.push(action.payload);
+      
     },
 
     delComment: (state, action) => {
@@ -78,8 +79,9 @@ export const userSlice = createSlice({
     changeComment: (state, action) => {
       state = state.map((data) => {
         if (data.id === action.payload.id) {
-          data.content = action.payload.new;
+          data.comment = action.payload.new;
         }
+          return data;
       });
     },
   },

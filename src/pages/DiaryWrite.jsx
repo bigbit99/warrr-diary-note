@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import { addUser } from '../redux/modules/Users';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../components/Button.styled';
 import {addfetchUser} from '../redux/modules/Diary_notes'
 import {v4 as uuidv4} from "uuid";
+import Button from '../components/Button';
+
 
 
 function Diary_write() {
@@ -19,6 +20,7 @@ function Diary_write() {
   });
 
  
+
   const dispatch = useDispatch();
   const userList = useSelector((state) => state.userReducer);
   const navigate = useNavigate();
@@ -75,9 +77,8 @@ function Diary_write() {
       </div>
       <Button type="submit" onClick={titlealert}>Add</Button>
 
-      <Button type="button" onClick={() => navigate('../diarywriteAll')}>
-        일기 보러가기  
-      </Button>
+      <Button label =  "일기보러가기" type="button" onClick={() => navigate('../diarywriteAll')}/>
+        
     </form>
   );
 }
