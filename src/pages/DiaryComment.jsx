@@ -1,7 +1,9 @@
 import {useSelector, useDispatch} from "react-redux";
+import { useState } from "react";
 import { addComment, delComment, changeComment } from "../redux/modules/Users";
 import Button from "../components/Button";
 import useInput from "../components/useInput";
+
 
 
 
@@ -11,7 +13,9 @@ function Diary_writeAll() {
     const RandomNum = Math.floor(Math.random() * 100);
     const customTitle = useInput('');
     const customComment = useInput('');
-    const customNewText = useInput(''); 
+    const customNewText = useInput('');
+    const [visible, setVisible] = useState(false);
+
 
 
 
@@ -32,8 +36,10 @@ function Diary_writeAll() {
                     <span>{comment.comment}</span>
 
                     <Button label= '삭제하기' onClick={() => dispatch(delComment(comment.id))}/>
-                    <Button label='수정하기'/></div><br />
-                    <div className="changeDiv"><input type='text' name={comment.id} {...customNewText} /><Button label = '수정완료' onClick={() => dispatch(changeComment({new: customNewText.value, id : comment.id}))}/></div>
+                    <Button label='수정하기' onClick={() =>{ setVisible(!visible);}}
+                        
+                    /></div><br />
+                    <div className="onOff"><input type='text' {...customNewText} /><Button label = '수정완료' onClick={() => dispatch(changeComment({new: customNewText.value, id : comment.id}))}/></div>
                 </>
             )})}
         </div>

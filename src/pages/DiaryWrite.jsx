@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {addfetchUser} from '../redux/modules/Diary_notes'
 import {v4 as uuidv4} from "uuid";
+import Button from '../components/Button';
+
 
 
 function Diary_write() {
@@ -79,9 +81,8 @@ function Diary_write() {
       </div>
       <button type="submit" >Add</button>
 
-      <Button type="button" onClick={() => navigate('../diarywriteAll')}>
-        일기 보러가기  
-      </Button>
+      <Button label =  "일기보러가기" type="button" onClick={() => navigate('../diarywriteAll')}/>
+        
     </form>
   );
 }

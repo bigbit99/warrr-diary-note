@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { fetchUser } from "../redux/modules/Diary_notes";
-import { addfetchUser } from "../redux/modules/Diary_notes";
 
 import Button from "../components/Button";
 

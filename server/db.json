@@ -1,40 +1,11 @@
 {
   "notes": [
     {
-      "id": "b70b05fb-b92b-466b-a418-13345c8a0d49",
-      "name": "ddaaaa",
-      "title": "qqwqweqweqwe",
-      "contents": "qqq"
-    },
-    {
-      "id": "ae411ad6-a452-47a3-b277-bde520c7637d",
-      "name": "ddaaaa",
-      "title": "qqwqweqweqwe",
-      "contents": "qqq"
-    },
-    {
-      "id": "ef6f9dd6-9bbc-497e-be7d-d69a46a2ac61",
-      "name": "ddaaaa",
-      "title": "qqwqweqweqwe",
-      "contents": "qqq"
-    },
-    {
-      "id": "2ec52c1b-9470-419d-8f83-1db3ce6b5018",
-      "name": "ddaaaa",
-      "title": "qqwqweqweqwe",
-      "contents": "qqq"
-    },
-    {
-      "id": "3e20d8c0-262a-46e8-af49-0786384f2189",
-      "name": "ddaaaa",
-      "title": "qqwqweqweqwe",
-      "contents": "qqq"
-    },
-    {
-      "id": "c9297233-092e-4ee4-b394-29d51b188c5e",
-      "name": "ddaaaa",
-      "title": "qqwqweqweqwe",
-      "contents": "qqq"
+      "id": "0",
+      "name": "이름",
+      "title": "제목",
+      "contents": "내용",
+      "comment": "댓글"
     }
   ]
 }
