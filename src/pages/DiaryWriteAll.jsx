@@ -9,12 +9,12 @@ import Button from "../components/Button";
 
 
 function Diary_writeAll() {
-    const dispacth = useDispatch();
+    const dispatch = useDispatch();
     const users = useSelector((state)=>state.Diary_note.users) 
-    console.log(users)
+   //console.log(users)
     const navigate = useNavigate();
     useEffect(()=>{
-        dispacth(fetchUser());
+        dispatch(fetchUser());
     },[])
 
     // if(error){
@@ -32,13 +32,10 @@ function Diary_writeAll() {
                         <p>{users.name}</p>
                         <p>{users.title}</p>
                         <p>{users.contents}</p>
+                        <Button label='자세히보기' onClick={()=>navigate(`/diarydetail/${users.id}`)}/>
                     </div>
-
                 ))
             }
-     
-              <Button label='자세히보기' onClick={()=>navigate('../diarydetail')}/>
-
         </div>
     )
 }
