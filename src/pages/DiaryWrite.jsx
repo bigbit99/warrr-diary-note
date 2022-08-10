@@ -23,13 +23,15 @@ function Diary_write() {
   const userList = useSelector((state) => state.userReducer);
   const navigate = useNavigate();
   
-  if (title< 10){
-    alert('10글자 이상 입력 ')
-  }
-
+  const titlealert = () => {
+    if(title.userTitle.length < 10 ){
+      alert('10글자 이상')
+    } 
+  } 
 
   return (
     <form onSubmit={(event) => {event.preventDefault();
+     
       dispatch(addfetchUser({id: uuidv4(), name,title,contents}));
       }}className="box">
       <div className="boxname">
@@ -52,8 +54,7 @@ function Diary_write() {
           minlength={10}
           placeholder="제목을 입력해주세요.(10자 이상)"
           required
-          // value={title}
-         
+          value={title.userTitle}
           onChange={(event) => {
             const { value } = event.target;
             setTitle({ ...title, userTitle:value });
@@ -76,7 +77,7 @@ function Diary_write() {
         />
   
       </div>
-      <button type="submit" >Add</button>
+      <Button type="submit" onClick={titlealert}>Add</Button>
 
       <Button type="button" onClick={() => navigate('../diarywriteAll')}>
         일기 보러가기  
