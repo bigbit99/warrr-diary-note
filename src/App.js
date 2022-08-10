@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/diarywrite" element={<DiaryWrite />} />
           <Route path="/diarywriteall" element={<DiaryWriteAll />} />
           <Route path="/diarydetail/:id" element={<DiaryDetail />} />
-          <Route path="/diarycomment/" element={<DiaryComment />} />
+          <Route path="/diarycomment" element={<DiaryComment />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

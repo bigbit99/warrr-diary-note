@@ -48,7 +48,7 @@ function Diary_writeAll() {
                     <span>{comment.comment}</span>
                     
                     <Button label= '삭제하기' onClick={() => dispatch(delComment(comment.id))}/>
-                    <Button label='수정하기' onClick={() =>{ setIsDone(isDone = true);}}
+                    <Button label='수정하기' onClick={() =>{ setIsDone(isDone === true);}}
                         
                     /></div><br />
                     <div className="onOff" visible>

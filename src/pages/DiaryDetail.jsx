@@ -58,7 +58,6 @@ function Diary_writeAll() {
     navigate('/diarywriteall');
   };
 
-
   return (
     <DetailBox>
       <h2>다이어리 상세페이지</h2>
@@ -69,6 +68,7 @@ function Diary_writeAll() {
         {/* <p>{id}</p> */}
         <p>{data?.name}</p>
         <p>{data?.title}</p>
+
         {edited ? (
           <input
             type="text"
