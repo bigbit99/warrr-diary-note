@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addUser } from '../redux/Users';
 import { useNavigate } from 'react-router-dom';
 import Button from "../components/Button";
-// import { useForm } from 'react-hook-form';
+
 
 function Diary_write() {
   const [name, setName] = useState('');
@@ -47,19 +47,6 @@ function Diary_write() {
           type="text"
           placeholder="작성자의 이름을 입력해주세요.(5자 이내)"
           
-          // onChange={(event) => {
-          //   setName(event.target.value)
-          //   alert('Click!')
-          // }}
-          // value={name}
-          
-        //   {...register('name', {
-        //     required: '필수 항목입니다.',
-        //     minLength: {
-        //       value: {name},
-        //       message: '10자 이상 입력해주세요.',
-        //     },
-        //   })}
         />
         {/* <p>{errors.name?.message}</p> */}
       </div>
@@ -73,13 +60,7 @@ function Diary_write() {
             setTitle(event.target.value);
           }}
           value={title}
-        //   {...register('title', {
-        //     required: '필수 항목입니다.',
-        //     minLength: {
-        //       value: {username},
-        //       message: '10자 이상 입력해주세요.',
-        //     },
-        //   })}
+       
         />
         {/* <p>{errors.title?.message}</p> */}
         
