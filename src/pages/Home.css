@@ -1,3 +1,14 @@
+@font-face {
+    font-family: '양진체';
+    src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: '양진체';
+}
+
 body {
     background-image: url("https://dthezntil550i.cloudfront.net/wa/latest/wa1905111941284820009304074/1280_960/fd0f10e8-17e7-48a1-91c5-596e95aac41d.png");
     background-size:cover; 
