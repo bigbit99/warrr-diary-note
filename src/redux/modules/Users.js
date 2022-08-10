@@ -46,7 +46,7 @@ export const userSlice = createSlice({
 
     getDiary: (state, action) => {
       state = state.map((data) => {
-        if(data.id === action.payload) {
+        if(data.id.toString() === action.payload) {
           data.contents = action.payload;
         }
         return data;

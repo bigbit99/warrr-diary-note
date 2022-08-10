@@ -31,13 +31,12 @@ export const patchfetchUser = createAsyncThunk(
       // eslint-disable-next-line no-template-curly-in-string
       .patch(`http://localhost:3001/notes/${payload.id}`, {
         id: payload.id,
+        name: payload.name,
         contents: payload.contents,
       })
-      .then((res) => 
-        {console.log(res.data)}
-      )
+      .then((res) => res.data)
       .catch((error) => error);
-      //  console.log(payload);
+      console.log(resdata);
     return thunkAPI.fulfillWithValue(resdata);
   }
 );
@@ -70,6 +69,9 @@ const Diary_note = createSlice({
       state.users = [];
       state.error = action.payload;
     },
+    // [patchfetchUser.fulfilled]: (state, action) => {
+    //   state.users = [...state.users, action.payload];
+    // }
   },
 });
 
