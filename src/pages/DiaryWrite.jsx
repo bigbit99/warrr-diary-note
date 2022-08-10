@@ -2,13 +2,9 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import { addUser } from '../redux/modules/Users';
 import { useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
 import { Button } from '../components/Button.styled';
 import {addfetchUser} from '../redux/modules/Diary_notes'
 import {v4 as uuidv4} from "uuid";
-=======
-import Button from "../components/Button";
->>>>>>> develop
 
 
 function Diary_write() {
