@@ -5,9 +5,9 @@ const initialState = [
   {
     id: 0,
     name: "",
-    title: "",
+    title: "2조는",
     contents: "",
-    comment: "",
+    comment: "못말려",
 
   },
 ];
@@ -21,7 +21,6 @@ export const userSlice = createSlice({
     },
 
     addComment: (state, action) => {
-      console.log(action.payload)
       state = state.push(action.payload);
       
     },

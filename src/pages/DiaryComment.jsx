@@ -3,6 +3,7 @@ import { useState } from "react";
 import { addComment, delComment, changeComment } from "../redux/modules/Users";
 import Button from "../components/Button";
 import useInput from "../components/useInput";
+import {v4 as uuidv4} from "uuid";
 
 
 
@@ -10,21 +11,20 @@ import useInput from "../components/useInput";
 function Diary_writeAll() {
     const dispatch = useDispatch();
     const comments = useSelector((state)=> state.userReducer)
-    const RandomNum = Math.floor(Math.random() * 100);
+    const RandomNum = uuidv4();
     const customTitle = useInput('');
     const customComment = useInput('');
     const customNewText = useInput('');
     const [visible, setVisible] = useState(false);
 
-
-
+ 
 
     return (
         <div>
         <span>일기 댓글 페이지입니다.</span><br/>
         <br/>
-        <input placeholder="이름(5자 이내)" maxLength={5} type="text" {...customTitle} /> 
-        <input placeholder="댓글을 추가하세요.(100자 이내)" maxLength={100} type="text"  {...customComment} />
+        <input placeholder="이름(5자 이내)"  maxLength={6} type="text"  {...customTitle} required /> 
+        <input placeholder="댓글을 추가하세요.(100자 이내)"  maxLength={100}  type="text"  {...customComment} required />
         <Button label="추가하기" onClick={()=>{dispatch(addComment({id: RandomNum, title: customTitle.value , comment: customComment.value}))}}/>
         <br/>
         <br/>
@@ -39,7 +39,7 @@ function Diary_writeAll() {
                     <Button label='수정하기' onClick={() =>{ setVisible(!visible);}}
                         
                     /></div><br />
-                    <div className="onOff"><input type='text' {...customNewText} /><Button label = '수정완료' onClick={() => dispatch(changeComment({new: customNewText.value, id : comment.id}))}/></div>
+                    <div className="onOff" visible><input type='text' {...customNewText} /><Button label = '수정완료' onClick={() => dispatch(changeComment({new: customNewText.value, id : comment.id}))}/></div>
                 </>
             )})}
         </div>
