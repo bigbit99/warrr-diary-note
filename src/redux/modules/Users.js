@@ -8,7 +8,6 @@ const initialState = [
     title: "2조는",
     contents: "",
     comment: "못말려",
-
   },
 ];
 
@@ -22,7 +21,6 @@ export const userSlice = createSlice({
 
     addComment: (state, action) => {
       state = state.push(action.payload);
-      
     },
 
     delComment: (state, action) => {
@@ -31,13 +29,13 @@ export const userSlice = createSlice({
       });
       return newDelCmt;
     },
-    
+
     editDiary: (state, action) => {
-      console.log(state, action.payload)
+      console.log(state, action.payload);
       state = state.map((data) => {
-        console.log(data.id.toString() === action.payload.id)
-        console.log(data)
-        if(data.id.toString() === action.payload.id) {
+        console.log(data.id.toString() === action.payload.id);
+        console.log(data);
+        if (data.id.toString() === action.payload.id) {
           data.contents = action.payload.new;
         }
         return data;
@@ -47,7 +45,29 @@ export const userSlice = createSlice({
 
     getDiary: (state, action) => {
       state = state.map((data) => {
-        if(data.id.toString() === action.payload) {
+        if (data.id.toString() === action.payload) {
+          data.contents = action.payload;
+        }
+        return data;
+      });
+    },
+
+    editDiary: (state, action) => {
+      console.log(state, action.payload);
+      state = state.map((data) => {
+        console.log(data.id.toString() === action.payload.id);
+        console.log(data);
+        if (data.id.toString() === action.payload.id) {
+          data.contents = action.payload.new;
+        }
+        return data;
+        //function안에 return값 써주기
+      });
+    },
+
+    getDiary: (state, action) => {
+      state = state.map((data) => {
+        if (data.id.toString() === action.payload) {
           data.contents = action.payload;
         }
         return data;
@@ -59,7 +79,7 @@ export const userSlice = createSlice({
         if (data.id === action.payload.id) {
           data.comment = action.payload.new;
         }
-          return data;
+        return data;
       });
     },
   },
@@ -73,6 +93,13 @@ export const userSlice = createSlice({
 //   });
 // },
 
-export const { addUser, addComment, delComment, changeComment, editDiary, getDiary} =
-  userSlice.actions;
+export const {
+  addUser,
+  addComment,
+  delComment,
+  changeComment,
+  editDiary,
+  getDiary,
+} = userSlice.actions;
+
 export default userSlice.reducer;
