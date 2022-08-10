@@ -17,14 +17,14 @@ function Diary_writeAll() {
     const customNewText = useInput('');
     const [visible, setVisible] = useState(false);
 
- 
+
 
     return (
         <div>
         <span>일기 댓글 페이지입니다.</span><br/>
         <br/>
-        <input placeholder="이름(5자 이내)"  maxLength={6} type="text"  {...customTitle} required /> 
-        <input placeholder="댓글을 추가하세요.(100자 이내)"  maxLength={100}  type="text"  {...customComment} required />
+        <input placeholder="이름(5자 이내)"  maxLength={5} type="text"  {...customTitle} /> 
+        <input placeholder="댓글을 추가하세요.(100자 이내)"  maxLength={100}  type="text"  {...customComment} />
         <Button label="추가하기" onClick={()=>{dispatch(addComment({id: RandomNum, title: customTitle.value , comment: customComment.value}))}}/>
         <br/>
         <br/>

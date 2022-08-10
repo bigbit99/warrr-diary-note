@@ -19,6 +19,7 @@ function Diary_write() {
     userContents : ''
   });
 
+
   const dispatch = useDispatch();
   const userList = useSelector((state) => state.userReducer);
   const navigate = useNavigate();
