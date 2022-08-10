@@ -8,6 +8,7 @@ const initialState = [
     title: "",
     contents: "",
     comment: "",
+
   },
 ];
 
@@ -28,6 +29,28 @@ export const userSlice = createSlice({
         return del.id !== action.payload;
       });
       return newDelCmt;
+    },
+    
+    editDiary: (state, action) => {
+      console.log(state, action.payload)
+      state = state.map((data) => {
+        console.log(data.id.toString() === action.payload.id)
+        console.log(data)
+        if(data.id.toString() === action.payload.id) {
+          data.contents = action.payload.new;
+        }
+        return data;
+        //function안에 return값 써주기
+      });
+    },
+
+    getDiary: (state, action) => {
+      state = state.map((data) => {
+        if(data.id.toString() === action.payload) {
+          data.contents = action.payload;
+        }
+        return data;
+      });
     },
 
     editDiary: (state, action) => {
@@ -70,6 +93,7 @@ export const userSlice = createSlice({
 //   });
 // },
 
+<<<<<<< HEAD
 export const {
   addUser,
   addComment,
@@ -78,4 +102,8 @@ export const {
   editDiary,
   getDiary,
 } = userSlice.actions;
+=======
+export const { addUser, addComment, delComment, changeComment, editDiary, getDiary} =
+  userSlice.actions;
+>>>>>>> 6b90042725aa5f37147e7901fea1ac27c4e14a01
 export default userSlice.reducer;
