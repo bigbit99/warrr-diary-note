@@ -55,7 +55,7 @@ function Diary_write() {
       <div className="boxtitle">
         제목
         <input
-          minlength='10' 
+          // minlength='10' 
           placeholder="제목을 입력해주세요.(10자 이상)"
           onChange={(event) => {
             const { value } = event.target;
