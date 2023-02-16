@@ -1,0 +1,79 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "bbc575ed-25c0-4150-878d-8c2395d58594",
+      "name": "ㅋㅋㅋ",
+      "title": "ㅋㅋㅋㅋ",
+      "contents": "??????"
+    },
+    {
+      "id": "a33e2eef-1b0f-4aff-b5ae-ac2c73eec2d5",
+      "name": "새로",
+      "title": "고침",
+      "contents": "왜 안되냐?????"
+    },
+    {
+      "id": "6b00cbb7-33d8-4531-b610-e0f963362805",
+      "name": "코더",
+      "title": "에러남",
+      "contents": "????"
+    },
+    {
+      "id": "a43a085a-806d-4034-976b-0219981184c3",
+      "name": "짱구",
+      "title": "synctext에러????",
+      "contents": "에러났는데 \n이걸 어떻게 고쳐야 하는거야?개빡침;;; "
+    },
+    {
+      "id": "216f0f09-ccf5-45ce-98c7-f136b1126dca",
+      "name": "짱구",
+      "title": "synctext에러????",
+      "contents": "고칠수있는건가????"
+    },
+    {
+      "id": "2c91f6fe-c7be-4502-bbc3-87716999893d",
+      "name": "흰둥이",
+      "title": "짱구새끼",
+      "contents": "주인맞냐? 개빡치네 ㅡㅡ 밥도 안주고 놀러댕ㄷ김"
+    },
+    {
+      "id": "e2de7447-5752-4876-9072-4ce1a5c93c5e",
+      "name": "봉미선",
+      "title": "비상금꿀맛",
+      "contents": "역시 남의돈이 최고야 "
+    },
+    {
+      "id": "defb1065-0dad-4f63-ac17-4270dfb80dbb",
+      "name": "신형만",
+      "title": "가장의 무게",
+      "contents": "돈벌기 개힘듦ㅋ"
+    },
+    {
+      "id": "238c01da-0359-4a85-8ba8-6a07507a33a1",
+      "name": "오잉?",
+      "title": "되는겨?",
+      "contents": "이게 되나"
+    },
+    {
+      "id": "d1cd2d08-9f14-4ee6-aaeb-668ca1e1982b",
+      "name": "멍충이",
+      "title": "바보",
+      "contents": "으이그"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

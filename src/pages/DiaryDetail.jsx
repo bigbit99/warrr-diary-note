@@ -13,36 +13,31 @@ import {
   useNavigate
 } from "react-router-dom";
 import styled from "styled-components";
-import { Button } from "../components/Button.styled";
+import Button from '../components/Button';
 import { patchfetchUser } from "../redux/modules/Diary_notes";
 
 function Diary_writeAll() {
   let { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-//   console.log(id);
 
   const users = useSelector(state => state.Diary_note.users); 
   let data = users.find(data => data.id.toString() === id);
-
-//   console.log(users);
-//   console.log(data.id);
-//   console.log(data.contents);
-//   console.log(data.name);
+  
+  console.log(data.id);
 
   const [edited, setEdited] = useState(false);
   const [newDiary, setNewDiary] = useState("");
 
   useEffect(() => {
     setNewDiary(data.contents);
-  }, [data]);
+  }, []);
 
   const onClickEditButton = () => {
     setEdited(true);
   };
 
   const onClickSubmitButton = () => {
-    console.log("submit");
     if (newDiary.trim() === "") {
       return alert(
         "입력된 내용이 없습니다."
@@ -55,17 +50,19 @@ function Diary_writeAll() {
       })
     );
     setEdited(false);
-    navigate('/diarywriteall');
+    // navigate('/diarywriteall');
   };
+
 
   return (
     <DetailBox>
       <h2>다이어리 상세페이지</h2>
-      <Detail>
+      <Detail 
+       key={data.id}
+      >
         <Link to="/diarywriteall">
           뒤로가기
         </Link>
-        {/* <p>{id}</p> */}
         <p>{data?.name}</p>
         <p>{data?.title}</p>
 
@@ -83,20 +80,27 @@ function Diary_writeAll() {
         )}
         {edited ? (
           <Button
+            label="저장"
             type="button"
             onClick={onClickSubmitButton}
-          >
-            저장
-          </Button>
+          />
         ) : (
           <Button
+            label="수정" 
             type="button"
             onClick={onClickEditButton}
-          >
-            수정
-          </Button>
+          />
         )}
+
+      <Button 
+          label="삭제"
+          type="button"
+          onClick={() => {
+            dispatch();
+          }}
+      />
       </Detail>
+      
     </DetailBox>
   );
 }
@@ -112,7 +116,7 @@ const DetailBox = styled.div`
 const Detail = styled.div`
   width: 600px;
   height: 200px;
-  background-color: wheat;
+  background-color: transparent;
   border: 1px solid #eee;
   border-radius: 10px;
   text-align: center;

@@ -10,8 +10,9 @@ import Button from "../components/Button";
 function Diary_writeAll() {
     const dispatch = useDispatch();
     const users = useSelector((state)=>state.Diary_note.users) 
-   //console.log(users)
+   console.log(users)
     const navigate = useNavigate();
+
     useEffect(()=>{
         dispatch(fetchUser());
     },[])

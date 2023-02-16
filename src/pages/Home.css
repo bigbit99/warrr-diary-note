@@ -5,14 +5,18 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
 *{
-    font-family: '양진체';
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 body {
-    background-image: url("https://dthezntil550i.cloudfront.net/wa/latest/wa1905111941284820009304074/1280_960/fd0f10e8-17e7-48a1-91c5-596e95aac41d.png");
+    /* background-image: url("https://dthezntil550i.cloudfront.net/wa/latest/wa1905111941284820009304074/1280_960/fd0f10e8-17e7-48a1-91c5-596e95aac41d.png");
     background-size:cover; 
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background-color:#121212;
+    color:#fff;
 }
 .home {
     margin-left: 35%;

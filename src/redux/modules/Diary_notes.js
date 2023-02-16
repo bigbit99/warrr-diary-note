@@ -3,15 +3,16 @@ import axios from "axios";
 
 export const fetchUser = createAsyncThunk("users/fetchUser", async () => {
   return await axios
-    .get(`http://localhost:3001/notes`)
+    .get(`http://localhost:3001/posts`)
     .then((res) => res.data)
     .catch((error) => error);
 });
+
 export const addfetchUser = createAsyncThunk(
   "users/fetchUser",
   async (payload, thunkAPI) => {
     const resdata = await axios
-      .post(`http://localhost:3001/notes`, {
+      .post(`http://localhost:3001/posts`, {
         id: payload.id,
         name: payload.name.userName,
         title: payload.title.userTitle,
@@ -23,13 +24,14 @@ export const addfetchUser = createAsyncThunk(
     return thunkAPI.fulfillWithValue(resdata);
   }
 );
+
 export const patchfetchUser = createAsyncThunk(
   "users/fetchUser",
   async (payload, thunkAPI) => {
     console.log(payload);
     const resdata = await axios
       // eslint-disable-next-line no-template-curly-in-string
-      .patch(`http://localhost:3001/notes/${payload.id}`, {
+      .patch(`http://localhost:3001/posts/${payload.id}`, {
         id: payload.id,
         name: payload.name,
         contents: payload.contents,
@@ -57,7 +59,7 @@ const Diary_note = createSlice({
       state.users = [];
       state.error = "";
     },
-    // fulfilled : 비동기 작업이 끝났을때 상태(데이터를 자져왔을때)
+    // fulfilled : 비동기 작업이 끝났을때 상태(데이터를 가져왔을때)
     [fetchUser.fulfilled]: (state, action) => {
       state.users = action.payload;
       state.loading = false;

@@ -10,6 +10,10 @@ function Links(){
         <li>
             <Link to="/diarycomment">DiaryComment</Link>
         </li>
+
+        <li>
+            <Link to="/diarywriteall">All Diary</Link>
+        </li>
        
     </ul>
 
